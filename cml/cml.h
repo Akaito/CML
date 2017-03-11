@@ -63,11 +63,22 @@ Boost Software License, v1.0 (see cml/LICENSE for details).
 #ifndef cml_h
 #define cml_h
 
+#if defined(__clang__)
+#	pragma clang diagnostic push
+#	pragma clang diagnostic ignored "-Wunused-local-typedef"
+#	pragma clang diagnostic ignored "-Wsign-compare"
+#	pragma clang diagnostic ignored "-Wunused-parameter"
+#endif
+
 #include <cml/vector.h>
 #include <cml/matrix.h>
 #include <cml/quaternion.h>
 #include <cml/util.h>
 #include <cml/mathlib/mathlib.h>
+
+#if defined(__clang__)
+#	pragma clang diagnostic pop
+#endif
 
 #endif
 
